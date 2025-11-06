@@ -252,7 +252,7 @@ fun SignInScreen(
 @Composable
 fun SingInScreenPreview() {
     SignInScreen(
-        mode = AuthMode.SignUp,
+        mode = AuthMode.SignIn,
         onPrimary = { _, _ -> },
         onForgotPassword = {},
         onSwitch = {}
