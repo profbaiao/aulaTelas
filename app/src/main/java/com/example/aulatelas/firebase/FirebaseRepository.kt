@@ -7,7 +7,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.database
 
-
 data class Car(
     val id: String = "",
     val name: String = "",
@@ -26,16 +25,18 @@ object FirebaseRepository {
             cars.addAll(it)
         }
     }
+
     fun createCar(car: Car) {
         val id = database.push().key!!
         database.child(id).setValue(car.copy(id = id))
 
     }
+
     fun editCar(car: Car) {
         database.child(car.id).setValue(car)
     }
 
-    fun deleteCar( car: Car){
+    fun deleteCar(car: Car) {
         database.child(car.id).removeValue()
     }
 
@@ -49,6 +50,7 @@ object FirebaseRepository {
                 }
                 onDataChange(carsList)
             }
+
             override fun onCancelled(error: DatabaseError) {
 
             }

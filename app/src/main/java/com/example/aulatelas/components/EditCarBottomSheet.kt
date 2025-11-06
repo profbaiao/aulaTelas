@@ -19,7 +19,6 @@ import androidx.compose.ui.unit.dp
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun EditCarBottomSheet(
-
     carName: String,
     onCarNameChange: (String) -> Unit,
     onDismissRequest: () -> Unit,
@@ -33,11 +32,11 @@ fun EditCarBottomSheet(
         sheetState = sheetState,
         modifier = modifier
     ) {
-        Column (
-            modifier= Modifier.padding(24.dp)
-        ){
+        Column(
+            modifier = Modifier.padding(24.dp)
+        ) {
             Text(
-                text = "Edit Car Name",
+                text = "Edição do Modelo do carro",
                 style = MaterialTheme.typography.titleLarge,
                 modifier = Modifier.padding(16.dp)
             )
@@ -45,7 +44,7 @@ fun EditCarBottomSheet(
                 value = carName,
                 onValueChange = onCarNameChange,
                 modifier = Modifier.padding(16.dp),
-                label = { Text("Car Name") },
+                label = { Text("Modelo do carro") },
                 shape = MaterialTheme.shapes.large,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
                 singleLine = true
